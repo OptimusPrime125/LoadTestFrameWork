@@ -7,7 +7,7 @@ class TestApiSimulation extends Simulation
 {
   // Http Config
  val HttpRequest = http.baseUrl("https://reqres.in")
-    .header("Accept","applicaion/json")
+    .header("Accept","application/json")
 
   //Scenario
   val scn = scenario("First Porject")
