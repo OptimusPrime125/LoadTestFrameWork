@@ -1,28 +1,20 @@
-package simulations
-
-import io.gatling.core.Predef._
+package simulations;
 import io.gatling.core.scenario.Simulation
+import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import javafx.util.Duration.seconds
 
-class TestApiSimulationRampUpUser extends Simulation
+class TestApiSimulationGet extends Simulation
 {
   // Http Config
  val HttpRequest = http.baseUrl("https://reqres.in")
     .header("Accept","application/json")
 
   //Scenario
-  val scn = scenario("Ramp Up User ")
+  val scn = scenario("First Porject")
       .exec(http("Get User Request")
         .get("/api/users?page=2").check(status is 200)
       )
   //SetUp
-  setUp(
-    scn.inject(
- nothingFor(5),
-      constantUsersPerSec(10) during(1 minus())
-    )
-  )
-    .protocols(HttpRequest)
+  setUp(scn.inject(atOnceUsers(100))).protocols(HttpRequest)
 
 }
