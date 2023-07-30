@@ -3,7 +3,7 @@ import io.gatling.core.scenario.Simulation
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
-class TestApiSimulationGet extends Simulation
+class GetAPICall extends Simulation
 {
   // Http Config
  val HttpRequest = http.baseUrl("https://reqres.in")

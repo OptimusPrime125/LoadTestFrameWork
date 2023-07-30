@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class TestApiSimulationCSVFeeder extends Simulation
+class SimulationCSVFeeder extends Simulation
 {
   // Http Config
   val HttpRequest: HttpProtocolBuilder = http.baseUrl("https://gorest.co.in")

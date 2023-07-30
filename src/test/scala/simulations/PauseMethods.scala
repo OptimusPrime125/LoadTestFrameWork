@@ -7,7 +7,7 @@ import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 import scala.concurrent.duration.DurationInt
 
-class TestApiSimulationPause extends Simulation
+class PauseMethods extends Simulation
 {
   // Http Config
  val HttpRequest: HttpProtocolBuilder = http.baseUrl("https://reqres.in")

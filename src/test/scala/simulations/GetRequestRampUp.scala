@@ -9,10 +9,13 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-class TestApiSimulationGetRampUp extends Simulation {
+class GetRequestRampUp extends Simulation {
   // Http Config
-  val HttpRequest: HttpProtocolBuilder = http.baseUrl("https://reqres.in")
+  val HttpRequest: HttpProtocolBuilder =
+    http.proxy(Proxy("localhost",8888))
+    .baseUrl("https://reqres.in")
     .header("Accept", "application/json")
+
 
   //Scenario
   val scn: ScenarioBuilder = scenario("First Project")
